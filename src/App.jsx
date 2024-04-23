@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import FirstPage from './FirstPage'
 import SecondPage from './SecondPage'
+
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('437826124');
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +25,9 @@ function App() {
     sub_headline_3:"Trials",
     sub_paragraph_3:"Sub Text Test",
   }
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
     <Routes>
       <Route path='/' element={<FirstPage/>}/>
