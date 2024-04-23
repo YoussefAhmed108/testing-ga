@@ -7,7 +7,7 @@ const FirstPage = ({ block }) => {
         <div>
             <h2>Welcome to the website</h2>
             <div>
-                <button onClick={() => navigate('/second')}>Go to second page</button>
+                <button onClick={() => navigate('/second')}>Go to second(2) page</button>
                 <button>Add to cart</button>
                 <button>Checkout</button>
             </div>
